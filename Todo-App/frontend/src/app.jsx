@@ -5,18 +5,19 @@ import './app.css'
 import {CreateTodo} from './components/createTodo';
 import {Todos} from './components/todos';
 
+
 export function App() {
   const [todos,setTodos] = useState([])
   
-  fetch('http://localhost:3000/todos')
-  .then(async function(res){
-    const json = await res.json();  
-    setTodos(json.todos);
-  })
+  // fetch('http://localhost:3000/todo')
+  // .then(async function(res){
+  //   const json = await res.json();  
+  //   setTodos(json);
+  // })
 
   return (
     <div>
-      <CreateTodo />
+      <CreateTodo /> 
       <Todos todos={todos}/>
     </div>
   ) 
