@@ -54,4 +54,4 @@ A backend API for a course selling platform where admins can create courses and 
 - Port number
 
 ## Author
-[Your Name]
+Siddhaartha B S
