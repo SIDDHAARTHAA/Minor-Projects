@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://siddhaartha09:I0tfBN6H5ehEskCI@cluster0.brcd5.mongodb.net/course_selling_app')
+mongoose.connect('mongodb+srv://siddhaartha09:I0tfBN6H5ehEskCI@cluster0.brcd5.mongodb.net/Todo_app')
 .catch((err)=>{
     console.error("mongoDb connection error",err);
 })

@@ -7,21 +7,21 @@ app.use(express.json());
 
 app.post('/todo',async (req,res)=>{
     const createPayload = req.body;
-    const parsedPayload = createTodo.parse(createPayload);
-    if(!parsedPayload.success){
-        res.status(411).json({
-            msg: 'invalid input'
+    
+    try{
+        const parsedPayload = createTodo.parse(createPayload);
+        await Todo.create({
+            title:parsedPayload.title,
+            description:parsedPayload.description,
+            completed: false
         })
-        return;
+        res.json({msg:'todo created successfully'})
+    }catch(error){
+        res.status(411).json({
+            msg: 'invalid input',
+            error: error.errors
+        })
     }
-    await Todo.create({
-        title: parsedPayload.data.title,
-        description: parsedPayload.data.description,
-        completed: false
-    })
-    res.json({
-        msg: 'todo created successfully'
-    })
 })
 
 app.get('/todo',async (req,res)=>{
@@ -46,4 +46,8 @@ app.put("/complete",async (req,res)=>{
     res.json({
         msg: 'todo updated successfully'
     })
+})
+
+app.listen(3000,()=>{
+    console.log("server is running on port 3000");
 })
