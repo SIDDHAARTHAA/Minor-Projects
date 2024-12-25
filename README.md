@@ -55,3 +55,4 @@ A backend API for a course selling platform where admins can create courses and 
 
 ## Author
 Siddhaartha B S
+Thankyou for reading this README file.
