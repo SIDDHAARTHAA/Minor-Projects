@@ -15,8 +15,8 @@ function startGame() {
     gameArea.textContent = 'Wait for green...';
     isWaiting = true;
     
-    // Random delay between 1-5 seconds
-    const delay = Math.random() * 4000 + 1000;
+    // Random delay between 3-5.5 seconds
+    const delay = Math.random() * 2500 + 3000;
     
     timeoutId = setTimeout(() => {
         gameArea.style.backgroundColor = 'green';
@@ -63,4 +63,7 @@ function handleClick() {
     isWaiting = false;
 }
 
-gameArea.addEventListener('click', handleClick); 
+gameArea.addEventListener('click', handleClick);
+document.addEventListener('keydown', (event) => {
+    handleClick();
+}); 
